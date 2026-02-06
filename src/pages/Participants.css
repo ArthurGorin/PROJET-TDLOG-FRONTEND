@@ -1,0 +1,362 @@
+/*Barre du haut (toolbar)*/
+.participants-toolbar {
+  --background: var(--ion-color-primary);
+  --color: white;
+}
+
+.participants-toolbar ion-title {
+  font-weight: 700;
+}
+
+.participants-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbar-selects {
+  --background: transparent;
+  margin-left: 8px;
+}
+
+.toolbar-label {
+  color: white;
+  opacity: 0.9;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+/* Contenu & Titre événement*/
+.participants-content {
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --padding-top: 12px;
+}
+
+.event-title-wrap {
+  margin: 8px 6px 14px;
+}
+
+.event-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+/*Cartes (blocs)*/
+.block-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+}
+
+.block-card ion-card-header {
+  padding-bottom: 6px; 
+}
+
+/*Formulaire d'ajout manuel*/
+.manual-form-list ion-item {
+  --inner-padding-end: 8px;
+  --padding-start: 8px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background: var(--ion-color-light);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.manual-search-results {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.autocomplete-hint {
+  margin: 6px 4px 4px;
+  color: var(--ion-color-medium);
+  font-size: 13px;
+}
+
+.autocomplete-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.autocomplete-item {
+  text-align: left;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.autocomplete-item:hover {
+  border-color: var(--ion-color-primary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.autocomplete-name {
+  font-weight: 700;
+}
+
+.autocomplete-email {
+  font-size: 13px;
+  color: var(--ion-color-medium);
+}
+
+/* Grille responsive du formulaire (desktop) */
+@media (min-width: 992px) {
+  .manual-form-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px 12px;
+  }
+  .manual-form-list .form-actions {
+    grid-column: 1 / -1;
+  }
+}
+
+.autocomplete-hint,
+.autocomplete-list {
+  grid-column: 1 / -1;
+}
+
+/*Import CSV (bouton blanc)*/
+.csv-dropzone {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+.csv-button {
+  display: inline-block;
+  background: #ffffff;
+  color: var(--ion-color-primary);
+  border: 2px dashed var(--ion-color-medium);
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 240px;
+  user-select: none;
+}
+
+.csv-button:hover {
+  background: var(--ion-color-light);
+  border-color: var(--ion-color-primary);
+  color: var(--ion-color-primary-shade);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.csv-button:active {
+  transform: translateY(1px);
+}
+
+.csv-button:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* input file masqué */
+.csv-input-hidden {
+  display: none;
+}
+
+.csv-help {
+  text-align: center;
+  margin-top: 8px;
+  color: var(--ion-color-medium);
+}
+
+/* Tableau participants */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.participant-search {
+  flex: 1;
+  margin-right: 12px;
+}
+
+.participants-table {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #eaeaea;
+}
+
+.table-header {
+  background: #f6f7fb;
+  font-weight: 700;
+  border-bottom: 1px solid #e4e6ee;
+}
+
+.table-row {
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.table-row.odd {
+  background: #fafbff; /* zébrage */
+}
+
+.participants-table ion-col {
+  display: flex;
+  align-items: center;
+}
+
+/* Colonnes spécifiques */
+.col-tarif {
+  max-width: 120px;
+}
+
+.col-status {
+  max-width: 180px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.col-qr {
+  max-width: 100px;
+  justify-content: center;
+}
+
+.col-actions {
+  white-space: nowrap;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+/* Entrées en lecture seule (verrouillées) */
+ion-input.locked {
+  --color: #222;
+  --background: transparent;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* Focus visible sur inputs éditables (accessibilité) */
+.participants-table ion-input:not(.locked) input:focus-visible {
+  outline: 2px solid var(--ion-color-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Statut scan */
+.status-chip {
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.status-scanned {
+  background: #e8f8f0;
+  color: #0f9d58;
+}
+
+.status-unused {
+  background: #fff6e6;
+  color: #d8860b;
+}
+
+.status-unknown {
+  background: #f2f2f2;
+  color: #555;
+}
+
+.status-meta {
+  font-size: 12px;
+  color: var(--ion-color-medium);
+}
+
+.status-meta.muted {
+  color: var(--ion-color-medium-shade);
+}
+
+/* QR */
+.qr-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Petits ajustements boutons*/
+.col-actions ion-button {
+  --padding-start: 6px;
+  --padding-end: 6px;
+}
+
+.col-actions ion-button:hover {
+  filter: brightness(0.98);
+}
+
+/*Dark mode léger*/
+@media (prefers-color-scheme: dark) {
+  .block-card {
+    background: var(--ion-color-step-50, #1e1e1e);
+    border-color: var(--ion-color-step-150, #2a2a2a);
+    box-shadow: none;
+  }
+
+  .participants-table {
+    background: var(--ion-color-step-50, #1e1e1e);
+    border-color: var(--ion-color-step-150, #2a2a2a);
+  }
+
+  .table-header {
+    background: var(--ion-color-step-100, #232323);
+    border-bottom-color: var(--ion-color-step-200, #2e2e2e);
+  }
+
+  .table-row {
+    border-bottom-color: var(--ion-color-step-200, #2e2e2e);
+  }
+
+  .table-row.odd {
+    background: var(--ion-color-step-75, #212121);
+  }
+
+  ion-input.locked {
+    --color: #eaeaea;
+  }
+
+  .csv-button {
+    background: var(--ion-color-step-50, #1e1e1e);
+    border-color: var(--ion-color-medium);
+    color: var(--ion-color-primary);
+  }
+
+  .csv-button:hover {
+    background: var(--ion-color-step-100, #232323);
+    border-color: var(--ion-color-primary);
+    color: var(--ion-color-primary-tint);
+    box-shadow: none;
+  }
+}
