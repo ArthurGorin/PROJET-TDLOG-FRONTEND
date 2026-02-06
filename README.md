@@ -1,55 +1,67 @@
-# PROJET TD-LOG — Application de Gestion d'Événements avec QR Codes
-## 1. Présentation générale
-Front : Ionic + React + TypeScript  
-Back : FastAPI en Python  
-Objectif : gérer les participants, générer des QR codes, les scanner depuis le front et suivre les événements pour les associations.
+# PROJET TD-LOG — Event Management Application with QR Codes
 
-### Gestion des utilisateurs
-- Création et administration par des comptes autorisés.
-- Recherche avec autocomplétion pour retrouver rapidement un participant.
+## Overview
 
-### Gestion des événements
-- Création d'événements côté back-office.
-- Affectation d'un participant à un événement.
-- Génération d'un QR code unique représentant la place/ticket.
+**PROJET TD-LOG** is a full-stack event management application designed for student associations.  
+It provides secure participant management, QR code–based ticketing, and real-time access control via a mobile scanning interface.
 
-### Scan des QR codes
-- Scannage en direct depuis l'application Ionic.
-- Vérification auprès du backend : ticket valide, déjà scanné ou invalide.
-- Marquage automatique pour éviter les doublons.
+**Tech stack**
+- Frontend: Ionic, React, TypeScript  
+- Backend: FastAPI (Python)
 
+## Features
 
-Le projet est séparé en deux dépôts Git :
-PROJET-TDLOG-BACKEND/ et PROJET-TDLOG-FRONTEND/
-Les deux projets sont indépendants, mais le frontend a besoin que le backend soit lancé pour fonctionner.
+### User Management
+- Creation and administration of users by authorized accounts
+- Autocomplete-based search to quickly find participants
 
-Prérequis :
-•	Python 3.10+ installé
-•	requirements.txt (pip install -r requirements.txt)
-•	Node.js 18+
-•	npm install
-un dossier .env avec ces variables d'environnement dedans : 
-SUPERADMIN_EMAIL=admin@tdlog.local
-SUPERADMIN_PASSWORD=changeme
-SUPERADMIN_NAME=Super Admin
-VITE_BACKEND_URL=http://localhost:8000  c'est l'URl du backend
+### Event Management
+- Event creation via a back-office interface
+- Assignment of participants to events
+- Generation of a unique QR code per ticket
 
-### COMMANDE POUR LANCER LE BACK :
-uvicorn app.main:app --reload --port 8000 --env-file .env
+### QR Code Scanning
+- Live QR code scanning from the Ionic mobile application
+- Backend validation: valid ticket, already scanned ticket, or invalid ticket
+- Automatic marking of scanned tickets to prevent duplicates
 
-Le terminal doit afficher :
-Uvicorn running on http://127.0.0.1:8000
+## Project Structure
 
+The project is split into two independent Git repositories:
 
-### COMMANDE POUR LANCER LE FRONT :
-npm run dev 
+PROJET-TDLOG-BACKEND/  
+PROJET-TDLOG-FRONTEND/
 
-ouvrir l'url http://localhost:5173/ dans le navigateur
+The frontend requires the backend to be running in order to function.
 
-### Mot de passe du compte de base :
-admin@tdlog.local
-changeme
+## Prerequisites
 
+Backend:
+- Python 3.10+
+- Install dependencies: pip install -r requirements.txt
 
+Frontend:
+- Node.js 18+
+- Install dependencies: npm install
 
+## Environment Variables
 
+Create a .env file with the following variables:
+
+SUPERADMIN_EMAIL=admin@tdlog.local  
+SUPERADMIN_PASSWORD=changeme  
+SUPERADMIN_NAME=Super Admin  
+VITE_BACKEND_URL=http://localhost:8000
+
+VITE_BACKEND_URL must point to the running backend instance.
+
+## Running the Project
+
+Backend:
+uvicorn main:app --reload
+
+Backend available at:
+http://localhost:8000
+
+Frontend:
+npm run dev
